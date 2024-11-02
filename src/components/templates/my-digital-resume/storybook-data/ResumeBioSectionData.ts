@@ -1,4 +1,4 @@
-import {ResumeBioSectionType} from "./MyDigitalResumeTypes";
+import {ResumeBioSectionType} from "../MyDigitalResumeTypes";
 
 const ResumeBioSectionData:ResumeBioSectionType = {
     // "educationExperiences": null,

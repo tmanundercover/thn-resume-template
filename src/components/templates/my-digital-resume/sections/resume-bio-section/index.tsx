@@ -3,9 +3,9 @@ import {CircularProgress, Grid, Typography, useMediaQuery, useTheme, ButtonGroup
 import {SanityContext} from "the-handsomestnerd-internal";
 import {pdfClient} from "the-handsomestnerd-internal";
 import {SocialMediaBlock} from "the-handsomestnerd-internal";
-import {ResumeBioSectionType} from "../../storybook-data/MyDigitalResumeTypes";
 import BusinessCardSubmitEmail from "../../business-card-submit-email/BusinessCardSubmitEmail";
 import useMyDigitalResumeStyles from "../../MyDigitalResumeStyles";
+import {ResumeBioSectionType} from "../../MyDigitalResumeTypes";
 
 
 interface IProps {

@@ -11,7 +11,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-scripts": "5.0.1",
-    "the-handsomestnerd-internal": "^0.1.282"
+    "the-handsomestnerd-internal": "^0.1.288"
   },
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.25.9",

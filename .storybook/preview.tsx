@@ -5,9 +5,13 @@ import {SanityProvider} from "the-handsomestnerd-internal";
 
 const preview: Preview = {
     decorators: [
-        (Story) => (
+        (Story, {parameters}) => {
             // <FirebaseProvider>
-            <SanityProvider>
+
+
+            return <SanityProvider
+                fetchSkillExperiences={parameters.fetchSkillExperiences}
+                fetchPortfolioItems={parameters.fetchPortfolioItems}>
                 <BrowserRouter>
                     {/*<AppSettingsProvider>*/}
                     {/*  <PageProvider page={HomePageResumeData}>*/}
@@ -25,7 +29,7 @@ const preview: Preview = {
                 </BrowserRouter>
             </SanityProvider>
             // </FirebaseProvider>
-        )
+        }
     ],
     parameters: {
         controls: {
