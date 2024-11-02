@@ -1,6 +1,6 @@
 import {FunctionComponent, useContext, useEffect, useState} from 'react'
-import {Grid, Typography, useMediaQuery, useTheme,} from '@mui/material';
-// import {SanityContext} from "the-handsomestnerd-internal";
+import {CircularProgress, Grid, Typography, useMediaQuery, useTheme, ButtonGroup, Button} from '@mui/material';
+import {SanityContext} from "the-handsomestnerd-internal";
 import {pdfClient} from "the-handsomestnerd-internal";
 import {SocialMediaBlock} from "the-handsomestnerd-internal";
 import {ResumeBioSectionType} from "../../storybook-data/MyDigitalResumeTypes";
@@ -22,7 +22,7 @@ const ResumeBioSection: FunctionComponent<IProps> = (props: IProps) => {
     const smDown = useMediaQuery(theme.breakpoints.down('sm'))
     const mdOnly = useMediaQuery(theme.breakpoints.only('md'))
 
-    // const sanityContext = useContext(SanityContext)
+    const sanityContext:any = useContext(SanityContext)
 
     const [aLinkUrl, setALinkUrl] = useState<string | undefined>(undefined)
 
@@ -88,51 +88,51 @@ const ResumeBioSection: FunctionComponent<IProps> = (props: IProps) => {
                     />
                 </Grid>
             </Grid>
-            {/*<Grid item container sm={12} md={5} justifyContent='center'>*/}
-            {/*    <Grid data-testid='bio-image' container item style={{*/}
-            {/*        backgroundImage: `url(${sanityContext.placeholderOrImage && sanityContext.placeholderOrImage(props.sectionData.mainImage, 350, 500)})`,*/}
-            {/*        backgroundSize: "cover",*/}
-            {/*        backgroundPosition: "top right",*/}
-            {/*        backgroundRepeat: "no-repeat",*/}
-            {/*        minHeight: "500px",*/}
-            {/*        maxWidth: "350px",*/}
-            {/*    }}>*/}
-            {/*    </Grid>*/}
-            {/*</Grid>*/}
-            {/*{!props.isHideButtons &&*/}
-            {/*    <Grid container item xs={12} sm={10} md={12} lg={6} spacing={1} style={{marginTop: theme.spacing(2)}}>*/}
-            {/*        <Grid item container alignItems='center'>*/}
-            {/*            <ButtonGroup fullWidth orientation={smDown || !mdOnly  ? 'vertical' : "horizontal"}>*/}
-            {/*                <Button name={'appointment'} variant='contained' fullWidth color='primary'*/}
-            {/*                        href={props.homePage?.bookAppointmentLink}><Typography variant="button"*/}
-            {/*                                                                               align='center'>Meet*/}
-            {/*                    with Me</Typography></Button>*/}
-            {/*                <Button name={'contact-me'} variant='contained' fullWidth color='primary'*/}
-            {/*                        href={'#CONTACT_ME'}><Typography variant="button"*/}
-            {/*                                                         align='center'>{props.sectionData.contactMeButtonTitle}</Typography></Button>*/}
+            <Grid item container sm={12} md={5} justifyContent='center'>
+                <Grid data-testid='bio-image' container item style={{
+                    backgroundImage: `url(${sanityContext.placeholderOrImage && sanityContext.placeholderOrImage(props.sectionData.mainImage, 350, 500)})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "top right",
+                    backgroundRepeat: "no-repeat",
+                    minHeight: "500px",
+                    maxWidth: "350px",
+                }}>
+                </Grid>
+            </Grid>
+            {!props.isHideButtons &&
+                <Grid container item xs={12} sm={10} md={12} lg={6} spacing={1} style={{marginTop: theme.spacing(2)}}>
+                    <Grid item container alignItems='center'>
+                        <ButtonGroup fullWidth orientation={smDown || !mdOnly  ? 'vertical' : "horizontal"}>
+                            <Button name={'appointment'} variant='contained' fullWidth color='primary'
+                                    href={props.homePage?.bookAppointmentLink}><Typography variant="button"
+                                                                                           align='center'>Meet
+                                with Me</Typography></Button>
+                            <Button name={'contact-me'} variant='contained' fullWidth color='primary'
+                                    href={'#CONTACT_ME'}><Typography variant="button"
+                                                                     align='center'>{props.sectionData.contactMeButtonTitle}</Typography></Button>
 
-            {/*                {aLinkUrl ? <Button href={aLinkUrl} fullWidth color='primary' variant='contained'>Download*/}
-            {/*                        PDF</Button> :*/}
-            {/*                    <Button disabled variant={"contained"} color='primary'>*/}
-            {/*                        <Grid spacing={.5} container item alignContent='center' justifyContent='center'*/}
-            {/*                              alignItems='center'>*/}
-            {/*                            <Grid item>*/}
-            {/*                                <CircularProgress size={14} color='primary'/>*/}
-            {/*                            </Grid>*/}
-            {/*                            <Grid item>*/}
-            {/*                                <Typography variant='button' color='primary'>Loading PDF...</Typography>*/}
-            {/*                            </Grid>*/}
-            {/*                        </Grid>*/}
-            {/*                    </Button>}*/}
+                            {aLinkUrl ? <Button href={aLinkUrl} fullWidth color='primary' variant='contained'>Download
+                                    PDF</Button> :
+                                <Button disabled variant={"contained"} color='primary'>
+                                    <Grid spacing={.5} container item alignContent='center' justifyContent='center'
+                                          alignItems='center'>
+                                        <Grid item>
+                                            <CircularProgress size={14} color='primary'/>
+                                        </Grid>
+                                        <Grid item>
+                                            <Typography variant='button' color='primary'>Loading PDF...</Typography>
+                                        </Grid>
+                                    </Grid>
+                                </Button>}
 
-            {/*                /!*{props.sectionData.cvFile && props.sectionData.cvFile.url.length > 0 && <Button*!/*/}
-            {/*                /!*    href={props.sectionData.cvFile?.url + "?dl=James Terrell Singleton - Software Engineer - CV.pdf"}*!/*/}
-            {/*                /!*    variant='contained' fullWidth color='primary'><CloudDownload*!/*/}
-            {/*                /!*    className={classes.iconOnButton}/><Typography variant="button" align='center'>*!/*/}
-            {/*                /!*    CV</Typography></Button>}*!/*/}
-            {/*            </ButtonGroup>*/}
-            {/*        </Grid>*/}
-            {/*    </Grid>}*/}
+                            {/*{props.sectionData.cvFile && props.sectionData.cvFile.url.length > 0 && <Button*/}
+                            {/*    href={props.sectionData.cvFile?.url + "?dl=James Terrell Singleton - Software Engineer - CV.pdf"}*/}
+                            {/*    variant='contained' fullWidth color='primary'><CloudDownload*/}
+                            {/*    className={classes.iconOnButton}/><Typography variant="button" align='center'>*/}
+                            {/*    CV</Typography></Button>}*/}
+                        </ButtonGroup>
+                    </Grid>
+                </Grid>}
         </Grid>
     );
 }

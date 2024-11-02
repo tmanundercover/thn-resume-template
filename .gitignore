@@ -2,3 +2,5 @@
 /package-lock.json
 /.env
 /build
+
+*storybook.log

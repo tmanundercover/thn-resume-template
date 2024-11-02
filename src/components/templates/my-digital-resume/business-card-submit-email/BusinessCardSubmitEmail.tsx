@@ -143,7 +143,7 @@ const BusinessCardSubmitEmail: FunctionComponent<SubmitEmailIProps> = () => {
         {/*    {getHelperText()}*/}
         {/*</Grid>*/}
         <Grid container item justifyContent='center'>
-            {aLinkUrl ? <Link href={aLinkUrl}>Download PDF</Link> :
+            {aLinkUrl ? <Typography color='primary'><Link href={aLinkUrl}>Download PDF</Link></Typography> :
                 <Grid spacing={.5} container item alignContent='center' justifyContent='center'
                       alignItems='center'><Grid item><CircularProgress size={12} color='primary'/></Grid><Grid
                     item><Typography color='primary'>Creating PDF version of Resume...</Typography></Grid></Grid>}
