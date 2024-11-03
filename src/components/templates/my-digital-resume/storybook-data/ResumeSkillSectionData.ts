@@ -1,4 +1,4 @@
-import {ResumeSkillSectionType} from "../MyDigitalResumeTypes";
+import { ResumeSkillSectionType } from "the-handsomestnerd-internal/dist/esm/components/BlockContentTypes"
 
 const ResumeSkillSectionData:ResumeSkillSectionType = {
     // "_rev": "9LEoCS0NKqkxZjwObGZliL",

@@ -1,7 +1,6 @@
 {
   "include": [
     "./src/**/*",
-    "./src/global.d.ts"
   ],
   "types": ["node"],
   "compilerOptions": {

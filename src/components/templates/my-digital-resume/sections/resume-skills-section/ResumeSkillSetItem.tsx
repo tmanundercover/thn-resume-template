@@ -1,8 +1,8 @@
 import {FunctionComponent, useState} from 'react'
 import {Grid, Typography} from "@mui/material";
 import {v4 as uuidv4} from 'uuid'
-import {ResumeSkillSet} from "../../MyDigitalResumeTypes";
 import ResumeSkillTooltipWrapper from "./ResumeSkillTooltipWrapper";
+import { ResumeSkillSet, ResumeSkillType } from 'the-handsomestnerd-internal/dist/esm/components/BlockContentTypes';
 
 interface IProps {
     skillset: ResumeSkillSet
@@ -22,7 +22,7 @@ const ResumeSkillSetItem: FunctionComponent<IProps> = (props: IProps) => {
         </Grid>
         <Grid container item>
             {
-                props.skillset.skills?.map((skill, index) => {
+                props.skillset.skills?.map((skill:ResumeSkillType, index:number) => {
 
                     return <Grid item display='inline' key={index} onClick={()=>{
                         setIsToolTipOpen(index)

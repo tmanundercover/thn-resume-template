@@ -2,7 +2,7 @@ import {FunctionComponent, useContext, useEffect, useState} from 'react'
 import {CircularProgress, Grid, Link, Typography} from "@mui/material";
 import {SanityContext, dateUtils} from "the-handsomestnerd-internal";
 import useMyDigitalResumeStyles from "../../MyDigitalResumeStyles";
-import {ResumePortfolioItemType, ResumeSkillType} from "../../MyDigitalResumeTypes";
+import { ResumePortfolioItemType, ResumeSkillType } from 'the-handsomestnerd-internal/dist/esm/components/BlockContentTypes';
 
 interface IProps {
     resumeSkill: ResumeSkillType

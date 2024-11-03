@@ -1,4 +1,4 @@
-import {ResumeSkillType} from "../MyDigitalResumeTypes";
+import { ResumeSkillType } from "the-handsomestnerd-internal/dist/esm/components/BlockContentTypes"
 
 const ResumeSkillData:ResumeSkillType = {
     "name": "Terrell Singleton",
@@ -7,10 +7,10 @@ const ResumeSkillData:ResumeSkillType = {
     "description": "React is a flexible modern Javascript frontend framework.",
     "versions": ["16", "17", "18"],
     "proficiency" : .5,
-    "iconPngSrc" :{
+    // "iconPngSrc" :{
 // @ts-ignore
-        _type:""
-    }
+//         _type:""
+//     }
 }
 
 export default ResumeSkillData

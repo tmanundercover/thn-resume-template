@@ -2,8 +2,8 @@ import{FunctionComponent} from 'react'
 import {useTheme} from "@mui/material/styles";
 import {Grid, Typography, useMediaQuery} from '@mui/material'
 import useMyDigitalResumeStyles from "../../MyDigitalResumeStyles";
-import {ResumeSkillSectionType, ResumeSkillSet} from "../../MyDigitalResumeTypes";
 import ResumeSkillSetItem from "./ResumeSkillSetItem";
+import { ResumeSkillSectionType, ResumeSkillSet } from 'the-handsomestnerd-internal/dist/esm/components/BlockContentTypes';
 
 
 interface IProps {
@@ -35,8 +35,8 @@ const ResumeSkillsSection: FunctionComponent<IProps> = (props: IProps) => {
                 </Grid>
                 <Grid item container md={8} spacing={2} justifyContent='space-between'>
                     {
-                        props.sectionData?.skillsets?.map((skillset: ResumeSkillSet, index2: number) => {
-                            return <ResumeSkillSetItem skillset={skillset} key={index2}/>
+                        props.sectionData?.skillsets?.map((skillSet: ResumeSkillSet, skillSetsIndex: number) => {
+                            return <ResumeSkillSetItem skillset={skillSet} key={skillSetsIndex}/>
                         })
                     }
                 </Grid>

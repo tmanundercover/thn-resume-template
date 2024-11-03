@@ -6,8 +6,8 @@ import ResumeSkillTooltipWrapper from "./ResumeSkillTooltipWrapper";
 import ResumeSkillData from "../../storybook-data/ResumeSkillData";
 import DigitalResumeThemeData from "../../storybook-data/DigitalResumeThemeData";
 import ResumeExperiencesArrayData from "../../storybook-data/ResumeExperiencesArrayData";
-import {ResumeSkillType} from "../../MyDigitalResumeTypes";
 import ResumePortfolioItemsArrayData from "../../storybook-data/ResumePortfolioItemsArrayData";
+import {ResumeSkillType} from "the-handsomestnerd-internal/dist/esm/components/BlockContentTypes";
 
 const meta: Meta<typeof ResumeSkillTooltipWrapper> = {
     title: "Resume/Page Components/Skill Tooltip Wrapper",

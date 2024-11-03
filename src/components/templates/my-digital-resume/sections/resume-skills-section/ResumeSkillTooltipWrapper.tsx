@@ -6,7 +6,8 @@ import {Close} from "@mui/icons-material";
 import LinkedExperiences from "./LinkedExperiences";
 import LinkedPortfolioEntries from "./LinkedPortfolioEntries";
 import {SanityContext} from "the-handsomestnerd-internal"
-import {ResumeSkillType} from "../../MyDigitalResumeTypes";
+import {ResumeSkillType} from 'the-handsomestnerd-internal/dist/esm/components/BlockContentTypes';
+
 interface IProps {
     resumeSkill: ResumeSkillType
     isTipOpen?: boolean
@@ -14,7 +15,7 @@ interface IProps {
 
 const ResumeSkillTooltipWrapper: FunctionComponent<PropsWithChildren<IProps>> = (props: PropsWithChildren<IProps>) => {
     const customizedThemeContext = useTheme()
-    const sanityContext:any = useContext(SanityContext)
+    const sanityContext: any = useContext(SanityContext)
 
     const [isTipOpen, setIsTipOpen] = useState<boolean>(false)
     const closeTip = () => {
@@ -25,16 +26,16 @@ const ResumeSkillTooltipWrapper: FunctionComponent<PropsWithChildren<IProps>> = 
     }
 
     useEffect(() => {
-        if(isTipOpen !== props.isTipOpen){
+        if (isTipOpen !== props.isTipOpen) {
             setIsTipOpen(!!props.isTipOpen)
         }
 
-        }, [props.isTipOpen])
+    }, [props.isTipOpen])
 
 
     // const smDown = useMediaQuery(customizedThemeContext.breakpoints.down('sm'))
     return <Grid container item
-                 >
+    >
         {props.resumeSkill.description ?
             <motion.div
                 whileHover={{
@@ -172,7 +173,7 @@ const ResumeSkillTooltipWrapper: FunctionComponent<PropsWithChildren<IProps>> = 
                                                 display='inline'
                                                 variant='subtitle1' color='white'>{`Versions: `}</Typography>
                                             {
-                                                props.resumeSkill.versions.map((versionNumber, index) => {
+                                                props.resumeSkill.versions.map((versionNumber: string, index: number) => {
                                                     return <Typography display='inline' key={index}
                                                                        variant='subtitle1'
                                                                        color='white'>{versionNumber}{(index <= ((props.resumeSkill.versions?.length ?? -1) - 2)) ? ' | ' : ''}</Typography>

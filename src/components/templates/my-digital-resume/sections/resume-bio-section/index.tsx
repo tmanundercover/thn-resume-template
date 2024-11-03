@@ -1,28 +1,28 @@
 import {FunctionComponent, useContext, useEffect, useState} from 'react'
-import {CircularProgress, Grid, Typography, useMediaQuery, useTheme, ButtonGroup, Button} from '@mui/material';
-import {SanityContext} from "the-handsomestnerd-internal";
-import {pdfClient} from "the-handsomestnerd-internal";
-import {SocialMediaBlock} from "the-handsomestnerd-internal";
+import {Button, ButtonGroup, CircularProgress, Grid, Typography, useMediaQuery, useTheme} from '@mui/material';
+import {pdfClient, SanityContext, SocialMediaBlock} from "the-handsomestnerd-internal";
 import BusinessCardSubmitEmail from "../../business-card-submit-email/BusinessCardSubmitEmail";
 import useMyDigitalResumeStyles from "../../MyDigitalResumeStyles";
-import {ResumeBioSectionType} from "../../MyDigitalResumeTypes";
-
+import {SanityContextType} from "the-handsomestnerd-internal/dist/esm/common/sanityIo/sanity-context/SanityContext";
+import { ResumeBioSectionType } from 'the-handsomestnerd-internal/dist/esm/components/BlockContentTypes';
+import { SanityTransformHwHomePage } from 'the-handsomestnerd-internal/dist/esm/common/sanityIo/Types';
 
 interface IProps {
     sectionData: ResumeBioSectionType
     // homePage?: SanityTransformHwHomePage
-    homePage?: any
+    homePage?:SanityTransformHwHomePage
     isHideEmail?: boolean
     isHideButtons?: boolean
 }
 
 const ResumeBioSection: FunctionComponent<IProps> = (props: IProps) => {
     const theme = useTheme()
+
     const classes = useMyDigitalResumeStyles()
     const smDown = useMediaQuery(theme.breakpoints.down('sm'))
     const mdOnly = useMediaQuery(theme.breakpoints.only('md'))
 
-    const sanityContext:any = useContext(SanityContext)
+    const sanityContext:SanityContextType = useContext(SanityContext)
 
     const [aLinkUrl, setALinkUrl] = useState<string | undefined>(undefined)
 
@@ -64,7 +64,7 @@ const ResumeBioSection: FunctionComponent<IProps> = (props: IProps) => {
                     </Grid>
                     <Grid item xs={9}><Typography gutterBottom
                                                   variant='body1'>{props.homePage?.businessContact?.phone}</Typography></Grid>
-                </Grid>
+                </Grid>{}
                 <Grid container item xs={11} sm={12}>
                     <Grid item xs={3}><Typography gutterBottom variant='body1'
                                                   style={{textTransform: "uppercase"}}>Email</Typography></Grid>

@@ -1,4 +1,4 @@
-import {ResumeExperienceType, ResumeSkillType} from "../MyDigitalResumeTypes";
+import { ResumeExperienceType } from "the-handsomestnerd-internal/dist/esm/components/BlockContentTypes"
 
 const ResumeExperiencesArrayData:ResumeExperienceType[] = [
     {

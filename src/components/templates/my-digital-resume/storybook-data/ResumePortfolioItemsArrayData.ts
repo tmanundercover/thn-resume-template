@@ -1,4 +1,4 @@
-import {ResumePortfolioItemType} from "../MyDigitalResumeTypes";
+import { ResumePortfolioItemType } from "the-handsomestnerd-internal/dist/esm/components/BlockContentTypes";
 
 const ResumePortfolioItemsArrayData:ResumePortfolioItemType[] = [
         {
