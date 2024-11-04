@@ -1,13 +1,11 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {ThemeProvider} from "@mui/material/styles";
-import {getThemeFromSanity} from "the-handsomestnerd-internal";
-import ResumeBioSection from "./index";
 import ResumeBioSectionData from "../../storybook-data/ResumeBioSectionData";
+import ResumeBioSection from "./index";
+import HomePageData from "../../storybook-data/HomePageData";
 import DigitalResumeThemeData from "../../storybook-data/DigitalResumeThemeData";
-import homePageResumeData from "../../storybook-data/HomePageData";
 
 const meta: Meta<typeof ResumeBioSection> = {
-    title:"Resume/Section/Resume Bio Section",
+    title: "Resume/Section/Resume Bio Section",
     component: ResumeBioSection,
 };
 
@@ -22,23 +20,28 @@ type Story = StoryObj<typeof ResumeBioSection>;
  */
 
 export const ResumeBioSectionComplete: Story = {
-    args :{
-      sectionData: ResumeBioSectionData,
-        homePage: homePageResumeData,
+    args: {
+        sectionData: ResumeBioSectionData,
+        homePage: HomePageData.homePageResumeData,
+    },
+    parameters: {
+        pageTheme: DigitalResumeThemeData
     },
     render: ({sectionData, isHideEmail, isHideButtons, homePage}) =>
-        <ThemeProvider theme={getThemeFromSanity(DigitalResumeThemeData)}>
-            <ResumeBioSection isHideButtons={isHideButtons} isHideEmail={isHideEmail} sectionData={sectionData} homePage={homePage}></ResumeBioSection>
-        </ThemeProvider> ,
+        <ResumeBioSection isHideButtons={isHideButtons} isHideEmail={isHideEmail} sectionData={sectionData}
+                          homePage={homePage}></ResumeBioSection>
 };
 
 export const ResumeBioSectionSearchResult: Story = {
-    args :{
+    args: {
         sectionData: ResumeBioSectionData,
-        homePage: homePageResumeData,
+        homePage: HomePageData.homePageResumeData,
+        isHideButtons: true
+    },
+    parameters: {
+        pageTheme: DigitalResumeThemeData
     },
     render: ({sectionData, isHideEmail, isHideButtons, homePage}) =>
-        <ThemeProvider theme={getThemeFromSanity(DigitalResumeThemeData)}>
-            <ResumeBioSection isHideButtons={true} isHideEmail={true} sectionData={sectionData} homePage={homePage}></ResumeBioSection>
-        </ThemeProvider> ,
+        <ResumeBioSection isHideButtons={isHideButtons} isHideEmail={isHideEmail} sectionData={sectionData}
+                          homePage={homePage}></ResumeBioSection>
 };

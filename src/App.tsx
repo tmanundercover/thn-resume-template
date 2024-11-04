@@ -1,8 +1,9 @@
-import {FC, lazy, Suspense} from "react";
+import {lazy, Suspense} from "react";
 import "./styles.css";
-import {AppWrapper} from 'the-handsomestnerd-internal'
 import ResumeBioSectionData from "./components/templates/my-digital-resume/storybook-data/ResumeBioSectionData";
 import HomePageData from "./components/templates/my-digital-resume/storybook-data/HomePageData";
+import ResumeSkillSectionData from "./components/templates/my-digital-resume/storybook-data/ResumeSkillSectionData";
+
 const folderName = "templates"
 const templateSectionsFolderName = "sections"
 
@@ -10,35 +11,39 @@ const PageData = {
     templateFolderName: "my-digital-resume",
     pageContent: [{
         sectionComponentName: "Tab1Section",
-        componeentProps: {
+        componentProps: {
             tab1DataMember: "tab1DataMember",
         }
     }, {
         sectionComponentName: "Tab2Section",
-        componeentProps: {
+        componentProps: {
             tab2DataMember: "tab2DataMember",
         }
     }, {
         sectionComponentName: "Tab3Section",
-        componeentProps: {
+        componentProps: {
             tab3DataMember: "tab3DataMember",
         }
     }, {
         sectionComponentName: "Tab4Section",
-        componeentProps: {
+        componentProps: {
             tab4DataMember: "tab4DataMember",
         }
     }, {
         sectionComponentName: "Tab5Section",
-        componeentProps: {
+        componentProps: {
             tab5DataMember: "tab5DataMember",
         }
-    },
-        {
+    }, {
             sectionComponentName: "resume-bio-section",
-            componeentProps: {
+            componentProps: {
                 sectionData: ResumeBioSectionData,
                 homePage: HomePageData
+            }
+        }, {
+            sectionComponentName: "resume-skills-section",
+            componentProps: {
+                sectionData: ResumeSkillSectionData
             }
         }
     ]
@@ -54,7 +59,7 @@ const lazyLoadedSectionsFromPluginPackage: any[] = PageData.pageContent.map(
     (pageContentSection, index) => {
         console.log()
         return {
-            componentProps: pageContentSection.componeentProps,
+            componentProps: pageContentSection.componentProps,
             component: lazy(() => import(`./components/${folderName}/${PageData.templateFolderName}/${templateSectionsFolderName}/${pageContentSection.sectionComponentName}`).catch(e => {
                 return import(`./components/${folderName}/${PageData.templateFolderName}/${templateSectionsFolderName}/NoSuchSection`)
             }))
@@ -64,7 +69,7 @@ const lazyLoadedSectionsFromPluginPackage: any[] = PageData.pageContent.map(
 const App = () => {
     const homePage: any = 0;
 
-    const renderSection = (section:any, index: number) => {
+    const renderSection = (section: any, index: number) => {
 
         if (!section.component) {
             return <div>No such component</div>

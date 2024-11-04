@@ -1,11 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {ThemeProvider} from '@mui/material/styles';
 import ResumeSkillsSection from "./index";
 import ResumeSkillSectionData from "../../storybook-data/ResumeSkillSectionData";
 import DigitalResumeThemeData from "../../storybook-data/DigitalResumeThemeData";
-import {getThemeFromSanity} from "the-handsomestnerd-internal"
+
 const meta: Meta<typeof ResumeSkillsSection> = {
-    title:"Resume/Section/Resume Skills Section",
+    title: "Resume/Section/Resume Skills Section",
     component: ResumeSkillsSection,
 };
 
@@ -20,9 +19,12 @@ type Story = StoryObj<typeof ResumeSkillsSection>;
  */
 
 export const ResumeSkillsSectionCompleteStory: Story = {
-    args :{
+    args: {
         sectionData: ResumeSkillSectionData,
     },
-    render: ({sectionData}) =>         <ThemeProvider theme={getThemeFromSanity(DigitalResumeThemeData)}>
-        <ResumeSkillsSection sectionData={sectionData}></ResumeSkillsSection></ThemeProvider>,
+    parameters: {
+        pageTheme: DigitalResumeThemeData
+    },
+    render: ({sectionData}) =>
+        <ResumeSkillsSection sectionData={sectionData}></ResumeSkillsSection>,
 };

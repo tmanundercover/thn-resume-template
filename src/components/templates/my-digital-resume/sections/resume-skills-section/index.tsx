@@ -5,13 +5,11 @@ import useMyDigitalResumeStyles from "../../MyDigitalResumeStyles";
 import ResumeSkillSetItem from "./ResumeSkillSetItem";
 import { ResumeSkillSectionType, ResumeSkillSet } from 'the-handsomestnerd-internal/dist/esm/components/BlockContentTypes';
 
-
-interface IProps {
+interface ResumeSkillsSectionProps {
     sectionData: ResumeSkillSectionType
 }
 
-const ResumeSkillsSection: FunctionComponent<IProps> = (props: IProps) => {
-    // const classes = useStyles()
+const ResumeSkillsSection: FunctionComponent<ResumeSkillsSectionProps> = (props: ResumeSkillsSectionProps) => {
     const globalClasses = useMyDigitalResumeStyles()
     const theme = useTheme()
 

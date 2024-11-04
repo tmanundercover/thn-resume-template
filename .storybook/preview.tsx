@@ -1,30 +1,31 @@
 import type {Preview} from "@storybook/react";
 import {BrowserRouter} from "react-router-dom";
-// @ts-ignore
-import {SanityProvider} from "the-handsomestnerd-internal";
+import {CustomizedThemeProvider, PageProvider, SanityProvider} from "the-handsomestnerd-internal";
+import {SanityTransformHwHomePage} from "the-handsomestnerd-internal/dist/cjs/common/sanityIo/Types";
+import HomePageData from "../src/components/templates/my-digital-resume/storybook-data/HomePageData";
 
 const preview: Preview = {
     decorators: [
         (Story, {parameters}) => {
+            const homepageData: SanityTransformHwHomePage = HomePageData.getHomePageResumeData(parameters.pageTheme)
             // <FirebaseProvider>
-
 
             return <SanityProvider
                 fetchSkillExperiences={parameters.fetchSkillExperiences}
                 fetchPortfolioItems={parameters.fetchPortfolioItems}>
                 <BrowserRouter>
                     {/*<AppSettingsProvider>*/}
-                    {/*  <PageProvider page={HomePageResumeData}>*/}
-                    {/*    <CustomizedThemeProvider pageTheme={DigitalResumeThemeData}>*/}
-                    {/*      <SnackbarProvider>*/}
-                    {/*        <ModalProvider>*/}
-                    {/*          <AmenityProvider>*/}
-                    <Story/>
-                    {/*</AmenityProvider>*/}
-                    {/*</ModalProvider>*/}
-                    {/*</SnackbarProvider>*/}
-                    {/*</CustomizedThemeProvider>*/}
-                    {/*</PageProvider>*/}
+                    <PageProvider page={homepageData}>
+                        <CustomizedThemeProvider>
+                            {/*      <SnackbarProvider>*/}
+                            {/*        <ModalProvider>*/}
+                            {/*          <AmenityProvider>*/}
+                            <Story/>
+                            {/*</AmenityProvider>*/}
+                            {/*</ModalProvider>*/}
+                            {/*</SnackbarProvider>*/}
+                        </CustomizedThemeProvider>
+                    </PageProvider>
                     {/*</AppSettingsProvider>*/}
                 </BrowserRouter>
             </SanityProvider>

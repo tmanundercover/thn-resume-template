@@ -1,6 +1,4 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {getThemeFromSanity} from "the-handsomestnerd-internal";
-import {ThemeProvider} from '@mui/material/styles';
 import {Typography} from "@mui/material";
 import ResumeSkillTooltipWrapper from "./ResumeSkillTooltipWrapper";
 import ResumeSkillData from "../../storybook-data/ResumeSkillData";
@@ -28,19 +26,18 @@ export const ResumeSkillTooltipWrapperCompleteStory: Story = {
     args: {
         resumeSkill: ResumeSkillData,
     },
-    parameters:{
-        fetchSkillExperiences: (ResumeSkillData:ResumeSkillType)=>{
+    parameters: {
+        fetchSkillExperiences: (ResumeSkillData: ResumeSkillType) => {
             return Promise.resolve(ResumeExperiencesArrayData)
         },
-        fetchPortfolioItems: (ResumeSkillData:ResumeSkillType)=>{
+        fetchPortfolioItems: (ResumeSkillData: ResumeSkillType) => {
             return Promise.resolve(ResumePortfolioItemsArrayData)
-        }
+        },
+        pageTheme: DigitalResumeThemeData
     },
     render: ({resumeSkill}) =>
-        <ThemeProvider
-            theme={getThemeFromSanity(DigitalResumeThemeData)}>
-            <ResumeSkillTooltipWrapper resumeSkill={resumeSkill}>
-                <Typography>I have a
+        <ResumeSkillTooltipWrapper resumeSkill={resumeSkill}>
+            <Typography>I have a
                 tooltip</Typography>
-            </ResumeSkillTooltipWrapper></ThemeProvider>,
+        </ResumeSkillTooltipWrapper>
 };
