@@ -1,8 +1,9 @@
 {
   "include": [
     "./src/**/*",
+    "./setupTests.ts"
   ],
-  "types": ["node"],
+  "types": ["node", "jest", "testing-library/jest-dom"],
   "compilerOptions": {
     "strict": true,
     "esModuleInterop": true,

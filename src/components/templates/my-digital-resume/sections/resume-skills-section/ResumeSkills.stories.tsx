@@ -2,6 +2,8 @@ import type {Meta, StoryObj} from '@storybook/react';
 import ResumeSkillsSection from "./index";
 import ResumeSkillSectionData from "../../storybook-data/ResumeSkillSectionData";
 import DigitalResumeThemeData from "../../storybook-data/DigitalResumeThemeData";
+import ResumeExperiencesArrayData from "../../storybook-data/ResumeExperiencesArrayData";
+import ResumePortfolioItemsArrayData from "../../storybook-data/ResumePortfolioItemsArrayData";
 
 const meta: Meta<typeof ResumeSkillsSection> = {
     title: "Resume/Section/Resume Skills Section",
@@ -23,6 +25,12 @@ export const ResumeSkillsSectionCompleteStory: Story = {
         sectionData: ResumeSkillSectionData,
     },
     parameters: {
+        fetchSkillExperiences: () => {
+            return Promise.resolve(ResumeExperiencesArrayData)
+        },
+        fetchPortfolioItems: () => {
+            return Promise.resolve(ResumePortfolioItemsArrayData)
+        },
         pageTheme: DigitalResumeThemeData
     },
     render: ({sectionData}) =>

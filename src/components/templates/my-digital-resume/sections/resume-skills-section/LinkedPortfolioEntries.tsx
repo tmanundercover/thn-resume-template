@@ -1,37 +1,29 @@
-import {FunctionComponent, useContext, useEffect, useState} from 'react'
+import {FunctionComponent} from 'react'
 import {CircularProgress, Grid, Link, Typography} from "@mui/material";
-import {SanityContext, dateUtils} from "the-handsomestnerd-internal";
+import {dateUtils} from "the-handsomestnerd-internal";
 import useMyDigitalResumeStyles from "../../MyDigitalResumeStyles";
-import { ResumePortfolioItemType, ResumeSkillType } from 'the-handsomestnerd-internal/dist/esm/components/BlockContentTypes';
+import {
+    ResumePortfolioItemType,
+    ResumeSkillType
+} from 'the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes';
+import useSkillPortfolioItems from './useSkillPortfolioItems';
+import LinkIcon from '@mui/icons-material/Link';
 
 interface IProps {
     resumeSkill: ResumeSkillType
 }
 
-const LinkedPortfolioEntries: FunctionComponent<IProps> = (props: IProps) => {
+const LinkedPortfolioEntries: FunctionComponent<IProps> = ({resumeSkill}: IProps) => {
     const classes = useMyDigitalResumeStyles()
-    const sanityContext:any = useContext(SanityContext)
+    const {data: portfolioItems, loading, error} = useSkillPortfolioItems(resumeSkill);
 
-    const [portfolioEntries, setPortfolioEntries] = useState<ResumePortfolioItemType[]>()
-
-    const getPortfolioItems = async (resumeSkill: ResumeSkillType) => {
-        if (sanityContext.fetchPortfolioItems)
-            return sanityContext.fetchPortfolioItems(resumeSkill)
-        else
-            return undefined
-    }
-    useEffect(() => {
-        getPortfolioItems(props.resumeSkill).then(response => {
-            if (response) {
-                setPortfolioEntries(response)
-            }
-        })
-    }, [])
+    if (loading) return <CircularProgress/>;
+    if (error) return <Typography color="error">Error loading experiences.</Typography>;
 
     return (<Grid container item paddingBottom={1}>
-        {(portfolioEntries?.length ?? 0) > 0 && <Grid container item><Typography color='whitesmoke' variant='caption'>Portfolio</Typography></Grid>}
+        {<Grid container item><Typography color='whitesmoke' variant='caption'>Portfolio</Typography></Grid>}
         {
-            portfolioEntries ? portfolioEntries.map((portfolioEntry: ResumePortfolioItemType, index) => {
+            portfolioItems?.map((portfolioEntry: ResumePortfolioItemType, index) => {
                 return <Grid item container key={index}>
                     <Grid item xs={3}>
                         <Link href={"#" + portfolioEntry._id} className={classes.toolTiplink}>
@@ -40,7 +32,7 @@ const LinkedPortfolioEntries: FunctionComponent<IProps> = (props: IProps) => {
                                 color='whitesmoke'>{dateUtils.YearNumeric(portfolioEntry.inceptionDate)}</Typography>
                         </Link>
                     </Grid>
-                    <Grid item xs={9}>
+                    <Grid item xs={8}>
                         <Link href={"#" + portfolioEntry._id} className={classes.toolTiplink}>
                             <Typography
                                 lineHeight={.5}
@@ -48,8 +40,15 @@ const LinkedPortfolioEntries: FunctionComponent<IProps> = (props: IProps) => {
                                 color='whitesmoke'>{portfolioEntry.title}</Typography>
                         </Link>
                     </Grid>
+                    <Grid item xs={1}>
+                        <Link  href={portfolioEntry.linkToProd}
+                              style={{color: "whitesmoke"}}>
+
+                            <LinkIcon/>
+                        </Link>
+                    </Grid>
                 </Grid>
-            }) : <CircularProgress></CircularProgress>
+            })
         }
     </Grid>)
 }

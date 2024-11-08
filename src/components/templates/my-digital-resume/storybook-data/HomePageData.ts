@@ -1,4 +1,4 @@
-import {SanityMuiTheme, SanityTransformHwHomePage } from "the-handsomestnerd-internal/dist/esm/common/sanityIo/Types";
+import {SanityMuiTheme, SanityTransformHwHomePage } from "the-handsomestnerd-internal/dist/esm/src/common/sanityIo/Types";
 import DigitalResumeThemeData from "./DigitalResumeThemeData";
 
 const homePageResumeData: SanityTransformHwHomePage = {

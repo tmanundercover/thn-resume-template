@@ -1,4 +1,4 @@
-import { ResumeSkillType } from "the-handsomestnerd-internal/dist/esm/components/BlockContentTypes"
+import { ResumeSkillType } from "the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes"
 
 const ResumeSkillsArrayData:ResumeSkillType[] = [{
     "name": "Terrell Singleton",

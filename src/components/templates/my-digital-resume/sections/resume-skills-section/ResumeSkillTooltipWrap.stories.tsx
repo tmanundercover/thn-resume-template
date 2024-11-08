@@ -1,11 +1,11 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {Typography} from "@mui/material";
+import {Grid, Typography} from "@mui/material";
 import ResumeSkillTooltipWrapper from "./ResumeSkillTooltipWrapper";
 import ResumeSkillData from "../../storybook-data/ResumeSkillData";
 import DigitalResumeThemeData from "../../storybook-data/DigitalResumeThemeData";
 import ResumeExperiencesArrayData from "../../storybook-data/ResumeExperiencesArrayData";
 import ResumePortfolioItemsArrayData from "../../storybook-data/ResumePortfolioItemsArrayData";
-import {ResumeSkillType} from "the-handsomestnerd-internal/dist/esm/components/BlockContentTypes";
+import {ResumeSkillType} from "the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes";
 
 const meta: Meta<typeof ResumeSkillTooltipWrapper> = {
     title: "Resume/Page Components/Skill Tooltip Wrapper",
@@ -35,9 +35,63 @@ export const ResumeSkillTooltipWrapperCompleteStory: Story = {
         },
         pageTheme: DigitalResumeThemeData
     },
-    render: ({resumeSkill}) =>
-        <ResumeSkillTooltipWrapper resumeSkill={resumeSkill}>
-            <Typography>I have a
-                tooltip</Typography>
-        </ResumeSkillTooltipWrapper>
+    render: ({resumeSkill, isOpenTooltip}) =>
+        <Grid container justifyContent='center' alignContent='center' style={{height: "100vh"}}>
+            <Grid item>
+                <ResumeSkillTooltipWrapper isOpenTooltip={isOpenTooltip} resumeSkill={resumeSkill}>
+                    <Typography>I have a
+                        tooltip</Typography>
+                </ResumeSkillTooltipWrapper>
+            </Grid>
+        </Grid>
+};
+
+export const ResumeSkillTooltipWrapperTooltipOpenStory: Story = {
+    args: {
+        resumeSkill: ResumeSkillData,
+        isOpenTooltip: true
+    },
+    parameters: {
+        fetchSkillExperiences: (ResumeSkillData: ResumeSkillType) => {
+            return Promise.resolve(ResumeExperiencesArrayData)
+        },
+        fetchPortfolioItems: (ResumeSkillData: ResumeSkillType) => {
+            return Promise.resolve(ResumePortfolioItemsArrayData)
+        },
+        pageTheme: DigitalResumeThemeData
+    },
+    render: ({resumeSkill, isOpenTooltip}) =>
+        <Grid container justifyContent='center' alignContent='center' style={{height: "100vh"}}>
+            <Grid item>
+                <ResumeSkillTooltipWrapper isOpenTooltip={isOpenTooltip} resumeSkill={resumeSkill}>
+                    <Typography>I have a
+                        tooltip</Typography>
+                </ResumeSkillTooltipWrapper>
+            </Grid>
+        </Grid>
+};
+
+export const ResumeSkillTooltipOpenEmptyVersionSpaceStory: Story = {
+    args: {
+        resumeSkill: {...ResumeSkillData, versions: ["16","","18"]},
+        isOpenTooltip: true
+    },
+    parameters: {
+        fetchSkillExperiences: (ResumeSkillData: ResumeSkillType) => {
+            return Promise.resolve(ResumeExperiencesArrayData)
+        },
+        fetchPortfolioItems: (ResumeSkillData: ResumeSkillType) => {
+            return Promise.resolve(ResumePortfolioItemsArrayData)
+        },
+        pageTheme: DigitalResumeThemeData
+    },
+    render: ({resumeSkill, isOpenTooltip}) =>
+        <Grid container justifyContent='center' alignContent='center' style={{height: "100vh"}}>
+            <Grid item>
+                <ResumeSkillTooltipWrapper isOpenTooltip={isOpenTooltip} resumeSkill={resumeSkill}>
+                    <Typography>I have a
+                        tooltip</Typography>
+                </ResumeSkillTooltipWrapper>
+            </Grid>
+        </Grid>
 };

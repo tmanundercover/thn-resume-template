@@ -57,7 +57,6 @@ const PageData = {
 
 const lazyLoadedSectionsFromPluginPackage: any[] = PageData.pageContent.map(
     (pageContentSection, index) => {
-        console.log()
         return {
             componentProps: pageContentSection.componentProps,
             component: lazy(() => import(`./components/${folderName}/${PageData.templateFolderName}/${templateSectionsFolderName}/${pageContentSection.sectionComponentName}`).catch(e => {

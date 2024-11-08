@@ -3,9 +3,9 @@ import {Button, ButtonGroup, CircularProgress, Grid, Typography, useMediaQuery, 
 import {pdfClient, SanityContext, SocialMediaBlock} from "the-handsomestnerd-internal";
 import BusinessCardSubmitEmail from "../../business-card-submit-email/BusinessCardSubmitEmail";
 import useMyDigitalResumeStyles from "../../MyDigitalResumeStyles";
-import {SanityContextType} from "the-handsomestnerd-internal/dist/esm/common/sanityIo/sanity-context/SanityContext";
-import { ResumeBioSectionType } from 'the-handsomestnerd-internal/dist/esm/components/BlockContentTypes';
-import { SanityTransformHwHomePage } from 'the-handsomestnerd-internal/dist/esm/common/sanityIo/Types';
+import {SanityContextType} from "the-handsomestnerd-internal/dist/esm/src/common/sanityIo/sanity-context/SanityContext";
+import { ResumeBioSectionType } from 'the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes';
+import { SanityTransformHwHomePage } from 'the-handsomestnerd-internal/dist/esm/src/common/sanityIo/Types';
 
 interface IProps {
     sectionData: ResumeBioSectionType
@@ -32,10 +32,6 @@ const ResumeBioSection: FunctionComponent<IProps> = (props: IProps) => {
                 setALinkUrl(theLink)
             })
     }, [])
-
-    useEffect(() => {
-            console.log("Section data for resume bio secction", props.sectionData)
-        }, [])
 
     return (
         <Grid container item style={{padding: theme.spacing(4, smDown ? 1 : 4)}} justifyContent='center'

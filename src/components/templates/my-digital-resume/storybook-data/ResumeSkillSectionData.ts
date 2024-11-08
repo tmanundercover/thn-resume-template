@@ -1,4 +1,4 @@
-import { ResumeSkillSectionType } from "the-handsomestnerd-internal/dist/esm/components/BlockContentTypes"
+import { ResumeSkillSectionType } from "the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes"
 
 const ResumeSkillSectionData:ResumeSkillSectionType = {
     // "_rev": "9LEoCS0NKqkxZjwObGZliL",
@@ -22,7 +22,8 @@ const ResumeSkillSectionData:ResumeSkillSectionType = {
                 {
                     "_id": "59fe1d75-a35c-4a6c-8ecd-cf872791821b",
                     "name": "React.js",
-                    "title": "React.js"
+                    "title": "React.js",
+                    description: "description here"
                 },
                 {
                     "_id": "c460e246-cac2-456d-a86e-6310259c3193",

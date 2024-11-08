@@ -1,4 +1,4 @@
-import { ResumeBioSectionType } from "the-handsomestnerd-internal/dist/esm/components/BlockContentTypes"
+import { ResumeBioSectionType } from "the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes"
 
 const ResumeBioSectionData:ResumeBioSectionType = {
     // "educationExperiences": null,

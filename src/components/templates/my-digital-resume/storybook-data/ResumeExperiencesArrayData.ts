@@ -1,4 +1,4 @@
-import { ResumeExperienceType } from "the-handsomestnerd-internal/dist/esm/components/BlockContentTypes"
+import { ResumeExperienceType } from "the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes"
 
 const ResumeExperiencesArrayData:ResumeExperienceType[] = [
     {

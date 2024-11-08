@@ -4,3 +4,4 @@
 /build
 
 *storybook.log
+/src/components/templates/my-digital-resume/sections/resume-skills-section/linked-experiences-combined/index.tsx
