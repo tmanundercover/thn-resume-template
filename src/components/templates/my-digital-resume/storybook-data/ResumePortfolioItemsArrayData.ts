@@ -4,7 +4,7 @@ const ResumePortfolioItemsArrayData:ResumePortfolioItemType[] = [
         {
             "title": "Fintech Company Website",
             // "_createdAt": "2022-12-02T15:30:24Z",
-            // "_id": "aba4e7c5-6109-4538-9851-cca583af9e9f",
+            "_id": "aba4e7c5-6109-4538-9851-cca583af9e9f",
             "imageGallery": [
 
             ],
@@ -73,7 +73,7 @@ const ResumePortfolioItemsArrayData:ResumePortfolioItemType[] = [
                 "_type": "slug"
             },
             "title": "Fintech Blog",
-            // "_id": "f2e5395b-e430-40e2-9374-0fed3d53ebb9",
+            "_id": "f2e5395b-e430-40e2-9374-0fed3d53ebb9",
             "linkToProd": "https://assembledbrands.com/blog",
             // "_updatedAt": "2022-12-02T15:28:00Z",
             // "_rev": "5iTZEBNHx5PwgJLwP9Hu3C",
@@ -225,11 +225,11 @@ const ResumePortfolioItemsArrayData:ResumePortfolioItemType[] = [
             "name": "Sanity ",
             // "imageGallery": null,
             // "_updatedAt": "2022-12-06T17:24:46Z",
-            // "_id": "e7fb2fbd-ca34-4112-af4c-0457e1e1d0f9"
+            "_id": "e7fb2fbd-ca34-4112-af4c-0457e1e1d0f9"
         },
         {
             "title": "Black Themed Question Game",
-            // "_id": "ddbdb0da-fec1-4a3f-a4d3-e6650e96f1f8",
+            "_id": "ddbdb0da-fec1-4a3f-a4d3-e6650e96f1f8",
             "slug": {
                 "current": "black-themed-question-game",
                 "_type": "slug"
@@ -369,7 +369,7 @@ const ResumePortfolioItemsArrayData:ResumePortfolioItemType[] = [
             //         "_type": "reference"
             //     }
             // },
-            // "_id": "9bbeab5b-f091-41e7-b5bf-8c9fd04199cd",
+            "_id": "9bbeab5b-f091-41e7-b5bf-8c9fd04199cd",
             // "_updatedAt": "2022-12-02T12:51:39Z",
             // "_rev": "ElrRHx5al3kb1PwLXH9UW8",
             "skillsHighlighted": [
@@ -477,7 +477,7 @@ const ResumePortfolioItemsArrayData:ResumePortfolioItemType[] = [
                     "title": "Node.js"
                 }
             ],
-            // "_id": "79706391-d66f-4f74-8854-20d049e33405",
+            "_id": "79706391-d66f-4f74-8854-20d049e33405",
             "title": "Bartender Flash Cards",
             // "_rev": "cwf6PSmkIH3MXtFHz0qXfL",
             "_type": "ResumePortfolioItem",
@@ -527,7 +527,7 @@ const ResumePortfolioItemsArrayData:ResumePortfolioItemType[] = [
                 //     }
                 // }
             ],
-            // "_id": "b125a00b-bafb-4434-8522-c365a1b7bf39",
+            "_id": "b125a00b-bafb-4434-8522-c365a1b7bf39",
             "inceptionDate": "2022-11-19",
             "detailTitle": "Healing & Wellness Small Business Website",
             "name": "THW",
@@ -609,6 +609,7 @@ const ResumePortfolioItemsArrayData:ResumePortfolioItemType[] = [
             // "_rev": "3re4XGUaXqpLG8nUTCNJ1p",
             "_type": "ResumePortfolioItem",
             "name": "This Site",
+            "linkToProd":"http://terrellSingleton.com",
             "title": "Digital Resume",
             "imageGallery": [
                 // {
@@ -654,7 +655,8 @@ const ResumePortfolioItemsArrayData:ResumePortfolioItemType[] = [
             ],
             // "skillsHighlighted": null,
             // "_createdAt": "2022-12-09T16:56:23Z",
-            // "_id": "0847255b-3899-4ec2-bebb-c1df0ecf6f04"
+            "inceptionDate": "2023-11-19",
+            "_id": "0847255b-3899-4ec2-bebb-c1df0ecf6f04"
         }
     ];
 

@@ -1,6 +1,6 @@
 import {useContext, useEffect, useState} from "react";
+import { ResumeExperienceType, ResumeSkillType } from "the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes";
 import {SanityContext} from "the-handsomestnerd-internal";
-import { ResumeSkillType, ResumeExperienceType } from "the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes";
 
 const useSkillExperiences = (skill: ResumeSkillType) => {
     const { fetchSkillExperiences } = useContext(SanityContext);
@@ -9,7 +9,10 @@ const useSkillExperiences = (skill: ResumeSkillType) => {
     const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
-        if (!skill || !fetchSkillExperiences) return;
+        if (!fetchSkillExperiences) {
+            setError(new Error("fetchSkillExperiences not defined"));
+            return
+        }
 
         setLoading(true);
         fetchSkillExperiences(skill)

@@ -3,9 +3,9 @@ import {Box, CircularProgress, Grid, IconButton, Tooltip, Typography, useTheme} 
 import {ColoredPng, SanityContext} from "the-handsomestnerd-internal";
 import {motion} from 'framer-motion'
 import {Close} from "@mui/icons-material";
-import LinkedExperiences from "./LinkedExperiences";
-import LinkedPortfolioEntries from "./LinkedPortfolioEntries";
-import {ResumeSkillType} from 'the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes';
+import { ResumeSkillType } from 'the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes';
+import LinkedExperiences from "../linked-experiences/LinkedExperiences";
+import LinkedPortfolioEntries from "../linked-portfolio-entries/LinkedPortfolioEntries";
 
 interface TooltipProps {
     resumeSkill: ResumeSkillType

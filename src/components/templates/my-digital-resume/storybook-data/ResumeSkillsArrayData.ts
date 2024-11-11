@@ -1,6 +1,7 @@
 import { ResumeSkillType } from "the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes"
 
 const ResumeSkillsArrayData:ResumeSkillType[] = [{
+    "_type":"ResumeSkill",
     "name": "Terrell Singleton",
     "_id": "59fe1d75-a35c-4a6c-8ecd-cf872791821b",
     "title": "React",

@@ -1,4 +1,3 @@
-// block renderers can return JSX Elements that are block or inline elements since they will be the top level element
 import makeStyles from '@mui/styles/makeStyles';
 import {COLORS} from "the-handsomestnerd-internal/dist/esm/src/theme/common/ColorPalette";
 

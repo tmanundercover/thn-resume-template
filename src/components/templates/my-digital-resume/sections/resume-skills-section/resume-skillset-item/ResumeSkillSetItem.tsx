@@ -1,7 +1,7 @@
 import {FunctionComponent, useState} from 'react'
 import {Grid, Typography} from "@mui/material";
 import {v4 as uuidv4} from 'uuid'
-import ResumeSkillTooltipWrapper from "./ResumeSkillTooltipWrapper";
+import ResumeSkillTooltipWrapper from "../resume-skill-tooltip-wrapper/ResumeSkillTooltipWrapper";
 import {ResumeSkillSet, ResumeSkillType} from 'the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes';
 
 interface IProps {

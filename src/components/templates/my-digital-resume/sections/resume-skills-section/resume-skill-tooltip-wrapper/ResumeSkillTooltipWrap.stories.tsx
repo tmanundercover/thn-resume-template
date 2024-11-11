@@ -1,11 +1,11 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {Grid, Typography} from "@mui/material";
 import ResumeSkillTooltipWrapper from "./ResumeSkillTooltipWrapper";
-import ResumeSkillData from "../../storybook-data/ResumeSkillData";
-import DigitalResumeThemeData from "../../storybook-data/DigitalResumeThemeData";
-import ResumeExperiencesArrayData from "../../storybook-data/ResumeExperiencesArrayData";
-import ResumePortfolioItemsArrayData from "../../storybook-data/ResumePortfolioItemsArrayData";
 import {ResumeSkillType} from "the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes";
+import ResumeSkillData from "../../../storybook-data/ResumeSkillData";
+import ResumeExperiencesArrayData from "../../../storybook-data/ResumeExperiencesArrayData";
+import ResumePortfolioItemsArrayData from "../../../storybook-data/ResumePortfolioItemsArrayData";
+import DigitalResumeThemeData from "../../../storybook-data/DigitalResumeThemeData";
 
 const meta: Meta<typeof ResumeSkillTooltipWrapper> = {
     title: "Resume/Page Components/Skill Tooltip Wrapper",

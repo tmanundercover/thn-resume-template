@@ -5,13 +5,15 @@
   "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
-    "@sanity/types": "^2.34.0",
+    "@sanity/types": "^3.63.0",
     "classnames": "2.3.1",
+    "date-fns": "^4.1.0",
     "import": "^0.0.6",
+    "lodash": "^4.17.21",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-scripts": "5.0.1",
-    "the-handsomestnerd-internal": "^0.1.303"
+    "the-handsomestnerd-internal": "^0.1.306"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -31,9 +33,9 @@
     "@storybook/test": "^8.4.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
-    "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^14.5.1",
     "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.13",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "babel-jest": "^29.7.0",

@@ -3,47 +3,69 @@ import "./styles.css";
 import ResumeBioSectionData from "./components/templates/my-digital-resume/storybook-data/ResumeBioSectionData";
 import HomePageData from "./components/templates/my-digital-resume/storybook-data/HomePageData";
 import ResumeSkillSectionData from "./components/templates/my-digital-resume/storybook-data/ResumeSkillSectionData";
+import ResumeExperienceSection from "./components/templates/my-digital-resume/sections/resume-experience-section";
+import ResumeExperienceSectionData
+    from "./components/templates/my-digital-resume/storybook-data/ResumeExperienceSectionData";
 
 const folderName = "templates"
 const templateSectionsFolderName = "sections"
 
 const PageData = {
     templateFolderName: "my-digital-resume",
-    pageContent: [{
-        sectionComponentName: "Tab1Section",
-        componentProps: {
-            tab1DataMember: "tab1DataMember",
-        }
-    }, {
-        sectionComponentName: "Tab2Section",
-        componentProps: {
-            tab2DataMember: "tab2DataMember",
-        }
-    }, {
-        sectionComponentName: "Tab3Section",
-        componentProps: {
-            tab3DataMember: "tab3DataMember",
-        }
-    }, {
-        sectionComponentName: "Tab4Section",
-        componentProps: {
-            tab4DataMember: "tab4DataMember",
-        }
-    }, {
-        sectionComponentName: "Tab5Section",
-        componentProps: {
-            tab5DataMember: "tab5DataMember",
-        }
-    }, {
+    pageContent: [
+        {
+            sectionComponentName: "Tab1Section",
+            componentProps: {
+                tab1DataMember: "tab1DataMember",
+            }
+        },
+        {
+            sectionComponentName: "Tab2Section",
+            componentProps: {
+                tab2DataMember: "tab2DataMember",
+            }
+        },
+        {
+            sectionComponentName: "Tab3Section",
+            componentProps: {
+                tab3DataMember: "tab3DataMember",
+            }
+        },
+        {
+            sectionComponentName: "Tab4Section",
+            componentProps: {
+                tab4DataMember: "tab4DataMember",
+            }
+        },
+        {
+            sectionComponentName: "Tab5Section",
+            componentProps: {
+                tab5DataMember: "tab5DataMember",
+            }
+        },
+        {
             sectionComponentName: "resume-bio-section",
             componentProps: {
                 sectionData: ResumeBioSectionData,
                 homePage: HomePageData
             }
-        }, {
+        },
+        {
             sectionComponentName: "resume-skills-section",
             componentProps: {
                 sectionData: ResumeSkillSectionData
+            }
+        },
+        {
+            sectionComponentName: "resume-skills-section",
+            componentProps: {
+                sectionData: ResumeSkillSectionData
+            }
+        },
+        {
+            sectionComponentName: "resume-experience-section",
+            componentProps: {
+                sectionData: ResumeExperienceSectionData
             }
         }
     ]

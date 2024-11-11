@@ -1,7 +1,7 @@
 import {renderHook, waitFor,} from '@testing-library/react';
 import useSkillExperiences from './useSkillExperiences'; // Update the import path as necessary
-import {SanityContext, SanityContextType} from './linked-experiences-combined';
 import {PropsWithChildren} from 'react';
+import SanityContext, { SanityContextType } from 'the-handsomestnerd-internal/dist/esm/src/common/sanityIo/sanity-context/SanityContext';
 
 describe('useSkillExperiences Hook', () => {
     const mockResumeSkill = {_id: 'skill1'} as any; // Replace with a valid mock ResumeSkillType

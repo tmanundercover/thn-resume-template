@@ -2,8 +2,8 @@ import{FunctionComponent} from 'react'
 import {useTheme} from "@mui/material/styles";
 import {Grid, Typography, useMediaQuery} from '@mui/material'
 import useMyDigitalResumeStyles from "../../MyDigitalResumeStyles";
-import ResumeSkillSetItem from "./ResumeSkillSetItem";
 import { ResumeSkillSectionType, ResumeSkillSet } from 'the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes';
+import ResumeSkillSetItem from "./resume-skillset-item/ResumeSkillSetItem";
 
 interface ResumeSkillsSectionProps {
     sectionData: ResumeSkillSectionType

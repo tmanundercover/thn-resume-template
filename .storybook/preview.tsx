@@ -1,7 +1,7 @@
 import type {Preview} from "@storybook/react";
 import {BrowserRouter} from "react-router-dom";
 import {CustomizedThemeProvider, PageProvider, SanityProvider} from "the-handsomestnerd-internal";
-import {SanityTransformHwHomePage} from "the-handsomestnerd-internal/dist/cjs/common/sanityIo/Types";
+import { SanityTransformHwHomePage } from "the-handsomestnerd-internal/dist/esm/src/common/sanityIo/Types";
 import HomePageData from "../src/components/templates/my-digital-resume/storybook-data/HomePageData";
 
 const preview: Preview = {
