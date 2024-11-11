@@ -6,9 +6,9 @@ import {
     ResumeSkillType
 } from 'the-handsomestnerd-internal/dist/esm/src/components/BlockContentTypes';
 import sortBy from 'lodash/sortBy';
-import {addMonths, format, intervalToDuration} from 'date-fns';
 import ResumeSkillTooltipWrapper
     from "../../resume-skills-section/resume-skill-tooltip-wrapper/ResumeSkillTooltipWrapper";
+import {dateUtils} from 'the-handsomestnerd-internal'
 
 interface ResumeExperienceItemProps {
     experience: ResumeExperienceType
@@ -17,22 +17,6 @@ interface ResumeExperienceItemProps {
 const ResumeExperienceItem: FunctionComponent<ResumeExperienceItemProps> = ({experience}: ResumeExperienceItemProps) => {
     const theme = useTheme()
     const [isTooltipOpen, setIsToolTipOpen] = useState<number>()
-
-
-    const getDuration = (inputDateStart: string | undefined, inputDateEnd: string | undefined): string => {
-        const dateStart = inputDateStart ? addMonths(new Date(inputDateStart), 1) : ""
-        const dateEnd = inputDateEnd ? addMonths(new Date(inputDateEnd), 1) : ""
-
-        const {years: durationYears, months: durationMonths}
-            = intervalToDuration({start: dateStart, end: dateEnd ? dateEnd : ""})
-
-        const durationYearUnit = 'year' + (durationYears !== 1 ? 's' : '')
-        const durationMonthUnit = 'month' + (durationMonths !== 1 ? 's' : '')
-
-        return (durationYears ? `${durationYears} ${durationYearUnit}` : '') + (durationMonths ? ` ${durationMonths} ${durationMonthUnit}` : "")
-    }
-
-    const formatDate = (inputDate?: string): string => inputDate ? format(addMonths(inputDate, 1), 'MMM yyyy') : ""
 
     const [checked, setChecked] = useState(true);
 
@@ -66,13 +50,13 @@ const ResumeExperienceItem: FunctionComponent<ResumeExperienceItemProps> = ({exp
                 <Grid container item xs={6} role='date-block'>
                     <Grid container item>
                         <Typography variant='body1'
-                                    fontWeight={'bold'}>{`${formatDate(experience.dateStart)}—${experience.isPresentPosition ? 'present' : formatDate(experience.dateEnd)}`}</Typography>
+                                    fontWeight={'bold'}>{`${dateUtils.monthYear(experience.dateStart)}—${experience.isPresentPosition ? 'present' : dateUtils.monthYear(experience.dateEnd)}`}</Typography>
                     </Grid>
                     <Grid container item xs={6}>
                         <Typography
                             variant='body1'
                             fontStyle={'italic'}>
-                            {getDuration(experience.dateStart, experience.dateEnd)}
+                            {dateUtils.getLengthOfTime(experience.dateStart, experience.dateEnd)}
                         </Typography>
                     </Grid>
                 </Grid>

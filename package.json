@@ -7,13 +7,12 @@
   "dependencies": {
     "@sanity/types": "^3.63.0",
     "classnames": "2.3.1",
-    "date-fns": "^4.1.0",
     "import": "^0.0.6",
     "lodash": "^4.17.21",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-scripts": "5.0.1",
-    "the-handsomestnerd-internal": "^0.1.306"
+    "the-handsomestnerd-internal": "^0.1.307"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
