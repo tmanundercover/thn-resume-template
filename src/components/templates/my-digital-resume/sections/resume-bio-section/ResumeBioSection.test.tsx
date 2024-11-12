@@ -15,7 +15,6 @@ describe('Resume Bio Section', () => {
 
             waitFor(() => {
                 expect(screen.getByTestId('bio-image')).toBeInTheDocument()
-
             })
         });
         test('Renders all social media buttons', async () => {
